@@ -5,38 +5,34 @@ function start () {
 	$("#submit-btn").click(handleSubmit); //Use $.click to figure out when the user clicks the "submit" button   
 }
 
-function handleSubmit (event, displayCity) {
+function handleSubmit (event) {
 	event.preventDefault(); //Prevent a form submission 
 	//Retrieve input
-	var city = $("#city-type").val(); // | Call $.val() on inputs to get the string value of your user's input 
-	//Update HTML 
-	$("#city-type").val(city); //Store user input in var city
+	var city = $("#city-type").val(); //Store user input in var city
+	alert(city); // Call $.val() on inputs to get the string value of your user's input 
+	displayCity(city);  //Call function for display city 
 }
 
-// 'Get the first element from an attribute name using $.attr()'' What does this mean? 
+function displayCity (city) {
 
-function displayCity (event) {
-	event.preventDefault(); //Prevent a form submission 
-	var city = $("#city-type").val();
-
-	if city = "New York" || "New York City" || "NYC" {
-		$("body").addClass("nyc");
+	if(city == "New York" || city == "New York City" || city == "NYC") {
+		$("body").attr("class", "nyc"); // 'Get the first element from an attribute name using $.attr() s
 	}
 
-	if else city = "San Francisco" || "SF" || "Bay Area" {
-		$("body").addClass("sf");
+	else if(city == "San Francisco" || city =="SF" || city == "Bay Area") {
+		$("body").attr("class", "sf");
 	}
 
-	if else city = "Los Angeles" || "LA" || "LAX" {
-		$("body").addClass("la");
+	else if(city == "Los Angeles" || city == "LA" || city == "LAX") {
+		$("body").attr("class", "la");
 	}
 
-	if else city = "Austin" || "ATX" {
-		$("body").addClass("la");
+	else if(city == "Austin" || city =="ATX") {
+		$("body").attr("class", "austin");
 	}
 
-	if else city = "Sydney" || "SYD" {
-		$("body").addClass("sydney");
+	else if(city == "Sydney" || city == "SYD") {
+		$("body").attr("class", "sydney");
 	}
 
 	else {
