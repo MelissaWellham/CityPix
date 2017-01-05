@@ -5,17 +5,21 @@ function start () {
 	$("#submit-btn").click(handleSubmit); //Use $.click to figure out when the user clicks the "submit" button   
 }
 
+//Get user's input 
+
 function handleSubmit (event) {
 	event.preventDefault(); //Prevent a form submission 
 	//Retrieve input
-	var city = $("#city-type").val(); //Store user input in var city
-	alert(city); // Call $.val() on inputs to get the string value of your user's input 
+	// Call $.val() on inputs to get the string value of your user's input 
+	var city = $("#city-type").val(); //Store user input in var city 
 	displayCity(city);  //Call function for display city 
 }
 
+// Display appropriate photo 
+
 function displayCity (city) {
 
-	if(city == "New York" || city == "New York City" || city == "NYC") {
+	if(city == "New York" || city == "New York City" || city == "NYC") { // brackets around entire if statement
 		$("body").attr("class", "nyc"); // 'Get the first element from an attribute name using $.attr() s
 	}
 
